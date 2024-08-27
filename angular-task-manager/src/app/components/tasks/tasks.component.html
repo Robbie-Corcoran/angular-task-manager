@@ -1,4 +1,8 @@
-<ng-container *ngFor="let task of tasks">
-    <app-task-item [task]="task"></app-task-item>
+<ng-container 
+    *ngFor="let task of tasks">
+        <app-task-item 
+            [task]="task" 
+            (onDeleteTask)="deleteTask(task)"
+        ></app-task-item>
 </ng-container>
   
