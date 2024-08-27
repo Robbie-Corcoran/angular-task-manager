@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskItemComponent } from '../task-item/task-item.component';
+import { AddTaskComponent } from '../add-task/add-task.component';
 import { NgFor } from '@angular/common';
 import { TaskService } from '../../sevices/task.service';
 import { Task } from '../../Task';
@@ -7,7 +8,7 @@ import { Task } from '../../Task';
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [TaskItemComponent, NgFor],
+  imports: [TaskItemComponent, AddTaskComponent, NgFor],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss'
 })
@@ -36,4 +37,10 @@ export class TasksComponent {
     task.reminder = !task.reminder;
     this.taskService.updateTaskReminder(task).subscribe();
   }
+
+  addTask(task: Task) {
+    this.taskService
+     .addTask(task)
+     .subscribe((newTask) => this.tasks.push(newTask));
+  };
 }

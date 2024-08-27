@@ -3,7 +3,7 @@
     class="task"
     (dblclick)="onToggle(task)">
     <h3>
-        {{ task.text }} 
+        {{ task.name }} 
             <fa-icon 
                 (click)="onDelete(task)" 
                 [ngStyle]="{'color': 'red'}" 
