@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { NgFor } from '@angular/common';
-import { TaskService } from '../../sevices/task.service';
+import { TaskService } from '../../services/task.service';
 import { Task } from '../../Task';
 
 @Component({
